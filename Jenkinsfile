@@ -43,15 +43,6 @@ pipeline {
             }
         }
 
-        #stage('Build Docker Image') {
-            #steps {
-                #powershell '''
-                  # Construimos la imagen Docker
-                  # docker build -t my-fastapi-app .
-                '''
-            }
-        }
-
         stage('Run Tests (Docker)') {
             steps {
                 powershell '''
