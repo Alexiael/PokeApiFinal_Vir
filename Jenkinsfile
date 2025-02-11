@@ -45,9 +45,7 @@ pipeline {
 
         stage('Publish Test Results') {
             steps {
-                // Publicamos los reportes JUnit en Jenkins
                 junit 'results.xml'
-                junit 'results_docker.xml'
             }
         }
     }
