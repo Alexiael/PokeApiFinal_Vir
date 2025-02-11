@@ -2,6 +2,17 @@ pipeline {
     agent any
 
     stages {
+        stage('Debug Workspace') {
+            steps {
+                powershell '''
+                Write-Host "MOSTRANDO CARPETA ACTUAL..."
+                pwd
+                Write-Host "LISTADO RECURSIVO..."
+                ls -Recurse
+                '''
+            }
+        }
+
         stage('Setup Python') {
             steps {
                 powershell '''
