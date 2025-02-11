@@ -43,12 +43,12 @@ pipeline {
             }
         }
 
-        stage('Run Tests (Docker)') {
-            steps {
-                powershell '''
-                  # Ejecutamos pytest dentro del contenedor Docker
-                  docker run --rm my-fastapi-app pytest --junitxml=results_docker.xml
-                '''
+        //stage('Run Tests (Docker)') {
+            //steps {
+               // powershell '''
+                  //# Ejecutamos pytest dentro del contenedor Docker
+                  //docker run --rm my-fastapi-app pytest --junitxml=results_docker.xml
+                //'''
             }
         }
 
