@@ -3,15 +3,14 @@
 import requests
 from typing import List, Optional, Dict, Any
 
-def fetch_data(url: str) -> Optional[Dict[str, Any]]:
-    """
-    Makes a GET request to the provided URL and returns the JSON data.
-    """
+def fetch_data(url):
+    resp = requests.get(url)
     try:
-        return requests.get(url).json()
-    except requests.RequestException as e:
-        print(f"Error fetching data: {e}")
-        return None
+        resp.raise_for_status() 
+    except requests.HTTPError:
+        
+        return {"error": resp.status_code}
+    return resp.json()
 
 def get_water_type_url() -> Optional[str]:
     """
