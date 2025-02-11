@@ -43,15 +43,6 @@ pipeline {
             }
         }
 
-        //stage('Run Tests (Docker)') {
-            //steps {
-               // powershell '''
-                  //# Ejecutamos pytest dentro del contenedor Docker
-                  //docker run --rm my-fastapi-app pytest --junitxml=results_docker.xml
-                //'''
-            }
-        }
-
         stage('Publish Test Results') {
             steps {
                 // Publicamos los reportes JUnit en Jenkins
