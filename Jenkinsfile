@@ -47,7 +47,7 @@ pipeline {
             steps {
                 powershell '''
                   # Construimos la imagen Docker
-                  docker build -t my-fastapi-app .
+                  # docker build -t my-fastapi-app .
                 '''
             }
         }
